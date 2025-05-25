@@ -72,11 +72,11 @@ Before you begin, ensure you have the following installed:
 
 ### Database Setup
 
-1.  **Connect to MySQL:**Open your preferred MySQL client (e.g., MySQL Workbench, command line, DBeaver) and connect to your MySQL server.
+1.  **Connect to MySQL:**Open your preferred MySQL client (e.g., MySQL Workbench, command line, DBeaver) and connect to your MySQL server. <br />
     
-2.  CREATE DATABASE IF NOT EXISTS digitallocker;USE digitallocker;CREATE TABLE IF NOT EXISTS users ( id INT AUTO\_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, -- IMPORTANT: In a real app, hash passwords (e.g., using BCrypt) created\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP);CREATE TABLE IF NOT EXISTS files ( id INT AUTO\_INCREMENT PRIMARY KEY, user\_id INT NOT NULL, original\_filename VARCHAR(255) NOT NULL, stored\_filename VARCHAR(255) NOT NULL UNIQUE, -- UUID for security and uniqueness upload\_date TIMESTAMP DEFAULT CURRENT\_TIMESTAMP, FOREIGN KEY (user\_id) REFERENCES users(id) ON DELETE CASCADE);
+2.  CREATE DATABASE IF NOT EXISTS digitallocker;USE digitallocker;CREATE TABLE IF NOT EXISTS users ( id INT AUTO\_INCREMENT PRIMARY KEY, username VARCHAR(50) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, -- IMPORTANT: In a real app, hash passwords (e.g., using BCrypt) created\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP);CREATE TABLE IF NOT EXISTS files ( id INT AUTO\_INCREMENT PRIMARY KEY, user\_id INT NOT NULL, original\_filename VARCHAR(255) NOT NULL, stored\_filename VARCHAR(255) NOT NULL UNIQUE, -- UUID for security and uniqueness upload\_date TIMESTAMP DEFAULT CURRENT\_TIMESTAMP, FOREIGN KEY (user\_id) REFERENCES users(id) ON DELETE CASCADE);   <br />
     
-3.  public class DBConnection { private static final String JDBC\_URL = "jdbc:mysql://localhost:3306/digitallocker?useSSL=false&serverTimezone=UTC"; private static final String USER = "your\_mysql\_username"; // ✨ UPDATE THIS ✨ private static final String PASSWORD = "your\_mysql\_password"; // ✨ UPDATE THIS ✨ // ... rest of the code}
+3.  public class DBConnection { private static final String JDBC\_URL = "jdbc:mysql://localhost:3306/digitallocker?useSSL=false&serverTimezone=UTC"; private static final String USER = "your\_mysql\_username"; // ✨ UPDATE THIS ✨ private static final String PASSWORD = "your\_mysql\_password"; // ✨ UPDATE THIS ✨ // ... rest of the code}     <br />
     
 
 Project Setup (Maven)
